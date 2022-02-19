@@ -1,0 +1,55 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: /home/buzz/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Thu, 17 Feb 2022 15:37:49 +05
+        provider: minikube.sigs.k8s.io
+        version: v1.25.0
+      name: cluster_info
+    server: https://192.168.59.100:8443
+  name: minikube
+contexts:
+- context:
+    cluster: minikube
+    extensions:
+    - extension:
+        last-update: Thu, 17 Feb 2022 15:37:49 +05
+        provider: minikube.sigs.k8s.io
+        version: v1.25.0
+      name: context_info
+    namespace: default
+    user: sa-namespace-admin
+  name: minikube
+- context:
+    cluster: minikube
+    user: prod_admin
+  name: prod_admin
+- context:
+    cluster: minikube
+    user: prod_view
+  name: prod_view
+- context:
+    cluster: minikube
+    user: sa-namespace-admin
+  name: sa-namespace-admin
+current-context: sa-namespace-admin
+kind: Config
+preferences: {}
+users:
+- name: minikube
+  user:
+    client-certificate: /home/buzz/.minikube/profiles/minikube/client.crt
+    client-key: /home/buzz/.minikube/profiles/minikube/client.key
+- name: prod_admin
+  user:
+    client-certificate: /home/buzz/Works/EPAM/Kubernetes/kubehomeworks/hw4/cert_prod_admin/prod_admin.crt
+    client-key: /home/buzz/Works/EPAM/Kubernetes/kubehomeworks/hw4/cert_prod_admin/prod_admin.key
+- name: prod_view
+  user:
+    client-certificate: /home/buzz/Works/EPAM/Kubernetes/kubehomeworks/hw4/cert_prod_view/prod_view.crt
+    client-key: /home/buzz/Works/EPAM/Kubernetes/kubehomeworks/hw4/cert_prod_view/prod_view.key
+- name: sa-namespace-admin
+  user:
+    token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjJUXzBuU2tlajFucW5wV0NWRTBzUUJHNHBvd25zMXlJTG1UcXhlSXMxQ0EifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6InNhLW5hbWVzcGFjZS1hZG1pbi10b2tlbi1rOWd6eCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJzYS1uYW1lc3BhY2UtYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI4ZjhhNTMyOC1hMjI5LTRiZTItOGFlYi1mODBiMzExYzc3ZjciLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6ZGVmYXVsdDpzYS1uYW1lc3BhY2UtYWRtaW4ifQ.haYXJg650X2leUBh0K2ZeCnQDoukjspb0ZwbRwQ5aG2srtcc7ssModZ71m3aKuX6XlEkwX-ekl9VO9PWBwTNgkVrVN7Gvd7bSlyuSITVgHBF7Jh8a-eaCWMn_bXSVXjHNbur7lK79PfLl8JZcn4AfZavN7fIp1UiL3t8VG2lsw5ufRA6hEuqdl8oqVLRKLiN490KUo_V_scdxZWGoQt77C6LK_F8Ifrp7afbLW1tRDK3BfBdV1KbsRmLJv_4362d0v4WYiOvHRXI-m42eDr6g1o1uzlQVysLVef5zgXb8tZ5UE1mYyhuiwPz3mWkiBnUXrNYkL1_eVjojBXn9MQQvA
